@@ -1,25 +1,39 @@
 import 'package:flutter/material.dart';
+import 'package:sanberappflutter/tugas/Tugas11/AccountScreen.dart';
+import 'package:sanberappflutter/tugas/Tugas11/SearchScreen.dart';
+import 'package:sanberappflutter/tugas/tugas9/DrawerScreen.dart';
 
 class HomeScreen extends StatelessWidget {
-  const HomeScreen({Key? key}) : super(key: key);
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: AppBar(
+        title: const Text(
+          "Home",
+          style: TextStyle(color: Colors.white),
+        ),
+        iconTheme: IconThemeData(color: Colors.white),
+        actions: <Widget>[
+          const Padding(
+            padding: EdgeInsets.all(8.0),
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.end,
+              children: [
+                IconButton(onPressed: null, icon: Icon(Icons.notifications)),
+                IconButton(onPressed: null, icon: Icon(Icons.extension))
+              ],
+            ),
+          )
+        ],
+        backgroundColor: const Color(0xFF65a9e0),
+      ),
+      drawer: const DrawerScreen(),
       body: Padding(
         padding: const EdgeInsets.all(30),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            SizedBox(height: 60),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.end,
-              children: [
-                IconButton(onPressed: () {}, icon: Icon(Icons.notifications)),
-                IconButton(onPressed: () {}, icon: Icon(Icons.extension))
-              ],
-            ),
-            SizedBox(height: 37),
+            SizedBox(height: 16),
             Text.rich(
               TextSpan(
                 children: <TextSpan>[
@@ -32,9 +46,6 @@ class HomeScreen extends StatelessWidget {
                 ],
               ),
               style: TextStyle(fontSize: 50),
-            ),
-            SizedBox(
-              height: 20,
             ),
             TextField(
               decoration: InputDecoration(

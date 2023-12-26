@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:sanberappflutter/tugas/Tugas10/HomeScreen.dart';
+import 'package:sanberappflutter/tugas/Tugas11/home.dart';
 
 class LoginScreen extends StatefulWidget {
   const LoginScreen({Key? key}) : super(key: key);
@@ -68,8 +70,14 @@ class _LoginScreenState extends State<LoginScreen> {
               padding: EdgeInsets.fromLTRB(10, 0, 10, 0),
               child: ElevatedButton(
                 style: raisedButtonStyle,
-                child: Text("Login"),
-                onPressed: () {},
+                child: Text(
+                  "Login",
+                  style: TextStyle(color: Colors.white),
+                ),
+                onPressed: () {
+                  Route route = MaterialPageRoute(builder: (context) => Home());
+                  Navigator.push(context, route);
+                },
               ),
             ),
             Container(
