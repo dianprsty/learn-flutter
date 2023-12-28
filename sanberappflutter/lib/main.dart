@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:sanberappflutter/tugas/Tugas13/login_screen.dart';
 import 'package:firebase_core/firebase_core.dart';
+import 'package:sanberappflutter/tugas/Tugas14/get_data_screen.dart';
 import 'firebase_options.dart';
 // import 'package:sanberappflutter/tugas/Tugas10/HomeScreen.dart';
 // import 'package:sanberappflutter/tugas/Tugas10/LoginScreen.dart';
@@ -21,13 +22,14 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-        debugShowCheckedModeBanner: false,
-        title: 'Flutter Demo',
-        theme: ThemeData(
-          colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
-          useMaterial3: true,
-        ),
-        home: const LoginScreen());
+      debugShowCheckedModeBanner: false,
+      title: 'Flutter Demo',
+      theme: ThemeData(
+        colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
+        useMaterial3: true,
+      ),
+      home: const GetDataScreenStateManagement(),
+    );
   }
 }
 
