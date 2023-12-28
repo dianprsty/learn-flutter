@@ -1,9 +1,16 @@
 import 'package:flutter/material.dart';
-import 'package:sanberappflutter/tugas/Tugas10/HomeScreen.dart';
-import 'package:sanberappflutter/tugas/Tugas10/LoginScreen.dart';
+import 'package:sanberappflutter/tugas/Tugas13/login_screen.dart';
+import 'package:firebase_core/firebase_core.dart';
+import 'firebase_options.dart';
+// import 'package:sanberappflutter/tugas/Tugas10/HomeScreen.dart';
+// import 'package:sanberappflutter/tugas/Tugas10/LoginScreen.dart';
 // import 'package:sanberappflutter/tugas/tugas9/Telegram.dart';
 
-void main() {
+Future<void> main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  await Firebase.initializeApp(
+    options: DefaultFirebaseOptions.currentPlatform,
+  );
   runApp(const MyApp());
 }
 
@@ -14,6 +21,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+        debugShowCheckedModeBanner: false,
         title: 'Flutter Demo',
         theme: ThemeData(
           colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
